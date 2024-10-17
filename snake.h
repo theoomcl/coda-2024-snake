@@ -1,10 +1,9 @@
-#ifndef __SNAKE_H__
-#define __SNAKE_H__
+#ifndef SNAKE_H
+#define SNAKE_H
 
-#include <stdio.h>
+#include <SDL2/SDL.h>
 #include <stdlib.h>
 #include <time.h>
-#include <SDL2/SDL.h>
 
 #define WINDOW_WIDTH 320
 #define WINDOW_HEIGHT 300
@@ -14,21 +13,18 @@
 
 typedef enum { UP, DOWN, LEFT, RIGHT } Direction;
 
-typedef struct 
-{	int x, y;
-	
-}Position;
+typedef struct {
+    int x, y;
+} Position;
 
-typedef struct 
-{	Position body [GRID_WIDTH * GRID_HEIGHT];
-	int length;
-	Direction direction;
-	
+typedef struct {
+    Position body[GRID_WIDTH * GRID_HEIGHT];
+    int length;
+    Direction direction;
 } Snake;
 
-typedef struct 
-{	Position position;
-	
+typedef struct {
+    Position position;
 } Food;
 
 extern Snake snake;
