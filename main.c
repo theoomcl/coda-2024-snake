@@ -57,7 +57,7 @@ int main(int argc, char* args[]) {
             SDL_Delay(3000); // Afficher pendant 3 secondes
             quit = 1;
         } else {
-            // Définir la couleur de fond en beige (R: 245, G: 245, B: 220, A: 255)
+            // DÃ©finir la couleur de fond en beige (R: 245, G: 245, B: 220, A: 255)
             SDL_SetRenderDrawColor(renderer, 245, 245, 220, 255);
             SDL_RenderClear(renderer);
             renderGame(renderer);

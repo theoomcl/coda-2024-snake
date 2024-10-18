@@ -112,7 +112,19 @@ void updateSnake() {
 
     // Vérifier si le serpent mange la nourriture
     if (snake.body[0].x == food.position.x && snake.body[0].y == food.position.y) {
+        // Ajouter un nouveau segment à la fin du serpent
+        Position newSegment = snake.body[snake.length - 1];
         snake.length++;
+        snake.body[snake.length - 1] = newSegment;
+
+        // Ajuster la position du nouveau segment pour éviter les collisions
+        switch (snake.direction) {
+            case UP: snake.body[snake.length - 1].y += 1; break;
+            case DOWN: snake.body[snake.length - 1].y -= 1; break;
+            case LEFT: snake.body[snake.length - 1].x += 1; break;
+            case RIGHT: snake.body[snake.length - 1].x -= 1; break;
+        }
+
         placeFood();
     }
 }
